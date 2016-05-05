@@ -47,8 +47,7 @@
   <article data-timings="">
     <ul>
 <li>Create a song recommender using metadata from the <a href="http://labrosa.ee.columbia.edu/millionsong/">Million Song Dataset</a>.<br></li>
-<li>Create a demo recommender application using <a href="http://shiny.rstudio.com/">R and Shiny</a></li>
-<li>Recommend songs by <a href="https://en.wikipedia.org/wiki/Prince_(musician)">US recording artist &#39;Prince&#39;</a></li>
+<li>Create a song recommender demo using <a href="http://shiny.rstudio.com/">R and Shiny</a></li>
 </ul>
 
   </article>
@@ -106,15 +105,15 @@ names(df)
 
 <slide class="" id="slide-4" style="background:;">
   <hgroup>
-    <h3>Prototype Recommender</h3>
+    <h2>Recommender</h2>
   </hgroup>
   <article data-timings="">
     
 <div style='float:left;width:48%;' class='centered'>
   <ul>
 <li>We use the <code>song_hotttnesss</code> and <code>loudness</code> as numeric features to model songs in a 2-dimensional space.</li>
-<li>A user can provide <code>song_hotttnesss</code> and <code>loudness</code></li>
-<li>The recommender can find the 5 nearest songs in the 2-d space using euclidean distance metric. </li>
+<li>A user can query the recommender by selecting values for <code>song_hotttnesss</code> and <code>loudness</code></li>
+<li>The recommender calculates the 5 closest songs in the 2D space using a euclidean distance metric. </li>
 </ul>
 
 </div>
@@ -128,10 +127,15 @@ names(df)
 
 <slide class="" id="slide-5" style="background:;">
   <hgroup>
-    <h1>Prince Recommender</h1>
+    <h2>Prince Song Recommender</h2>
   </hgroup>
   <article data-timings="">
-    
+    <ul>
+<li>We build a prototype that uses 25 of the 1 million songs.</li>
+<li>The 25 songs are recorded by <a href="https://en.wikipedia.org/wiki/Prince_(musician)">US recording artist &#39;Prince&#39;</a></li>
+<li><a href="https://technicalelvis.shinyapps.io/example_2/">We built a Shiny App that demonstrates the recommender - Click here to try it!</a></li>
+</ul>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -160,13 +164,13 @@ names(df)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=4 title='Prototype Recommender'>
+        data-slide=4 title='Recommender'>
          4
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=5 title='Prince Recommender'>
+        data-slide=5 title='Prince Song Recommender'>
          5
       </a>
     </li>

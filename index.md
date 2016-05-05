@@ -14,8 +14,7 @@ knit        : slidify::knit2slides
 ## Goals
 
 - Create a song recommender using metadata from the [Million Song Dataset](http://labrosa.ee.columbia.edu/millionsong/).  
-- Create a demo recommender application using [R and Shiny](http://shiny.rstudio.com/)
-- Recommend songs by [US recording artist 'Prince'](https://en.wikipedia.org/wiki/Prince_(musician\))
+- Create a song recommender demo using [R and Shiny](http://shiny.rstudio.com/)
 
 --- .class #id
 
@@ -61,16 +60,21 @@ names(df)
 
 --- &twocol
 
-### Prototype Recommender
+## Recommender
 
 *** =left
 
 - We use the `song_hotttnesss` and `loudness` as numeric features to model songs in a 2-dimensional space.
-- A user can provide `song_hotttnesss` and `loudness`
-- The recommender can find the 5 nearest songs in the 2-d space using euclidean distance metric. 
+- A user can query the recommender by selecting values for `song_hotttnesss` and `loudness`
+- The recommender calculates the 5 closest songs in the 2D space using a euclidean distance metric. 
 
 *** =right
 ![plot of chunk unnamed-chunk-5](assets/fig/unnamed-chunk-5-1.png)
 
 ---
-# Prince Recommender
+
+##  Prince Song Recommender
+
+- We build a prototype that uses 25 of the 1 million songs.
+- The 25 songs are recorded by [US recording artist 'Prince'](https://en.wikipedia.org/wiki/Prince_(musician\))
+- [We built a Shiny App that demonstrates the recommender - Click here to try it!](https://technicalelvis.shinyapps.io/example_2/)
