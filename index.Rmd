@@ -15,39 +15,56 @@ knit        : slidify::knit2slides
 
 - Create a song recommender using metadata from the [Million Song Dataset](http://labrosa.ee.columbia.edu/millionsong/).  
 - Create a demo recommender application using [R and Shiny](http://shiny.rstudio.com/)
-- Recommend songs by [US recording artist 'Prince'](https://en.wikipedia.org/wiki/Prince_(musician) )
+- Recommend songs by [US recording artist 'Prince'](https://en.wikipedia.org/wiki/Prince_(musician\))
 
 --- .class #id
 
 ## Getting and Cleaning the Data
 
 - The entire dataset is 280GB and Stored in Amazon S3 in [HDF5](https://www.hdfgroup.org/HDF5/) format.
-- We ran a data extraction script on EC2 to a serialized R file containing the features.
+- We extracted some HDF5 fields to a serialized R file containing the features.
 
 ```{r, echo=TRUE, cache=TRUE}
 df <- readRDS("data/songs.rds")
 names(df)
 ```
 
---- .class #id
-
+--- &twocol
 ## Feature Selection
 
-Song Hotttnesss : Measures the popularity of the song.
-
 ```{r, echo=FALSE,message=FALSE}
-# First, lets load libraries and datasets used in the analysis.
+# Load ggplot for the plots
 library(ggplot2)
 ```
 
-```{r echo=FALSE, cache=TRUE, message=FALSE, warning=FALSE}
-qplot(song_hotttnesss, data=df)
-```
+*** =left
 
-***
 
-Loudness : Measures the audio volume of the song.
 
 ```{r echo=FALSE, cache=TRUE, message=FALSE, warning=FALSE}
-qplot(loudness, data=df)
+qplot(song_hotttnesss, data=df, main="Song Hotttnesss Distribution for 1M songs:\nMeasures the popularity of the song [0.0, 1.0].")
 ```
+
+*** =right
+
+```{r echo=FALSE, cache=TRUE, message=FALSE, warning=FALSE}
+qplot(loudness, data=df, main="Loudness Distribution for 1M songs:\nMeasures the audio volume of the song. 0db is the loudest.")
+```
+
+--- &twocol
+
+### Prototype Recommender
+
+*** =left
+
+- We use the `song_hotttnesss` and `loudness` as numeric features to model songs in a 2-dimensional space.
+- A user can provide `song_hotttnesss` and `loudness`
+- The recommender can find the 5 nearest songs in the 2-d space using euclidean distance metric. 
+
+*** =right
+```{r echo=FALSE, cache=TRUE, message=FALSE, warning=FALSE}
+qplot(song_hotttnesss, loudness, data=df, main="Hotttnesss vs Loudness")
+```
+
+---
+# Prince Recommender

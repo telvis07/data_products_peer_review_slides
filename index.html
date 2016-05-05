@@ -48,7 +48,7 @@
     <ul>
 <li>Create a song recommender using metadata from the <a href="http://labrosa.ee.columbia.edu/millionsong/">Million Song Dataset</a>.<br></li>
 <li>Create a demo recommender application using <a href="http://shiny.rstudio.com/">R and Shiny</a></li>
-<li>Recommend songs by <a href="https://en.wikipedia.org/wiki/Prince_(musician">US recording artist &#39;Prince&#39;</a> )</li>
+<li>Recommend songs by <a href="https://en.wikipedia.org/wiki/Prince_(musician)">US recording artist &#39;Prince&#39;</a></li>
 </ul>
 
   </article>
@@ -62,7 +62,7 @@
   <article data-timings="">
     <ul>
 <li>The entire dataset is 280GB and Stored in Amazon S3 in <a href="https://www.hdfgroup.org/HDF5/">HDF5</a> format.</li>
-<li>We ran a data extraction script on EC2 to a serialized R file containing the features.</li>
+<li>We extracted some HDF5 fields to a serialized R file containing the features.</li>
 </ul>
 
 <pre><code class="r">df &lt;- readRDS(&quot;data/songs.rds&quot;)
@@ -86,15 +86,52 @@ names(df)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="class" id="id" style="background:;">
+<slide class="" id="slide-3" style="background:;">
   <hgroup>
     <h2>Feature Selection</h2>
   </hgroup>
   <article data-timings="">
-    <p>Song Hotttnesss : Measures the popularity of the song.</p>
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="assets/fig/unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3"></p>
 
-<p><img src="assets/fig/unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3"></p>
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="assets/fig/unnamed-chunk-4-1.png" alt="plot of chunk unnamed-chunk-4"></p>
 
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h3>Prototype Recommender</h3>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <ul>
+<li>We use the <code>song_hotttnesss</code> and <code>loudness</code> as numeric features to model songs in a 2-dimensional space.</li>
+<li>A user can provide <code>song_hotttnesss</code> and <code>loudness</code></li>
+<li>The recommender can find the 5 nearest songs in the 2-d space using euclidean distance metric. </li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="assets/fig/unnamed-chunk-5-1.png" alt="plot of chunk unnamed-chunk-5"></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h1>Prince Recommender</h1>
+  </hgroup>
+  <article data-timings="">
+    
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -119,6 +156,18 @@ names(df)
       <a href="#" target="_self" rel='tooltip' 
         data-slide=3 title='Feature Selection'>
          3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Prototype Recommender'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Prince Recommender'>
+         5
       </a>
     </li>
   </ul>

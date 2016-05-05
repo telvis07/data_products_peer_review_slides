@@ -15,14 +15,14 @@ knit        : slidify::knit2slides
 
 - Create a song recommender using metadata from the [Million Song Dataset](http://labrosa.ee.columbia.edu/millionsong/).  
 - Create a demo recommender application using [R and Shiny](http://shiny.rstudio.com/)
-- Recommend songs by [US recording artist 'Prince'](https://en.wikipedia.org/wiki/Prince_(musician) )
+- Recommend songs by [US recording artist 'Prince'](https://en.wikipedia.org/wiki/Prince_(musician\))
 
 --- .class #id
 
 ## Getting and Cleaning the Data
 
 - The entire dataset is 280GB and Stored in Amazon S3 in [HDF5](https://www.hdfgroup.org/HDF5/) format.
-- We ran a data extraction script on EC2 to a serialized R file containing the features.
+- We extracted some HDF5 fields to a serialized R file containing the features.
 
 
 ```r
@@ -44,18 +44,33 @@ names(df)
 ## [21] "time_signature_confidence" "track_id"
 ```
 
---- .class #id
-
+--- &twocol
 ## Feature Selection
 
-Song Hotttnesss : Measures the popularity of the song.
+
+
+*** =left
 
 
 
 ![plot of chunk unnamed-chunk-3](assets/fig/unnamed-chunk-3-1.png)
 
-***
-
-Loudness : Measures the audio volume of the song.
+*** =right
 
 ![plot of chunk unnamed-chunk-4](assets/fig/unnamed-chunk-4-1.png)
+
+--- &twocol
+
+### Prototype Recommender
+
+*** =left
+
+- We use the `song_hotttnesss` and `loudness` as numeric features to model songs in a 2-dimensional space.
+- A user can provide `song_hotttnesss` and `loudness`
+- The recommender can find the 5 nearest songs in the 2-d space using euclidean distance metric. 
+
+*** =right
+![plot of chunk unnamed-chunk-5](assets/fig/unnamed-chunk-5-1.png)
+
+---
+# Prince Recommender
