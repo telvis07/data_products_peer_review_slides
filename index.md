@@ -13,6 +13,7 @@ knit        : slidify::knit2slides
 
 ## Goals
 
+- Analyze the [Million Song Dataset](http://labrosa.ee.columbia.edu/millionsong/)
 - Create a song recommender using metadata from the [Million Song Dataset](http://labrosa.ee.columbia.edu/millionsong/).  
 - Create a song recommender demo using [R and Shiny](http://shiny.rstudio.com/)
 
