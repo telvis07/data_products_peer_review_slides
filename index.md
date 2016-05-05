@@ -78,4 +78,7 @@ names(df)
 
 - We built a prototype that uses 25 of the 1 million songs.
 - The 25 songs are recorded by [US recording artist 'Prince'](https://en.wikipedia.org/wiki/Prince_(musician\))
+- The 25 Songs have valid (non-NA, non-zero) values for both `song_hotttnesss` and `loudness`
 - [We built a Shiny App that demonstrates the recommender - Click here to try it!](https://technicalelvis.shinyapps.io/prince_song_recommender/)
+
+
