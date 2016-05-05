@@ -66,7 +66,7 @@ names(df)
 
 - We use the `song_hotttnesss` and `loudness` as numeric features to model songs in a 2-dimensional space.
 - A user can query the recommender by selecting values for `song_hotttnesss` and `loudness`
-- The recommender calculates the 5 closest songs in the 2D space using a euclidean distance metric. 
+- The recommender calculates the `5 nearest songs` in the 2D space using a euclidean distance metric. 
 
 *** =right
 ![plot of chunk unnamed-chunk-5](assets/fig/unnamed-chunk-5-1.png)
