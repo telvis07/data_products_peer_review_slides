@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prince Song Recommender</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Prince Song Recommender">
+  <meta name="author" content="Telvis Calhoun">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Prince Song Recommender</h1>
+    <h2>Building a song recommender using the Million Song Dataset</h2>
+    <p>Telvis Calhoun<br/>Research Engineer</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Goals</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Create a song recommender using metadata from the <a href="http://labrosa.ee.columbia.edu/millionsong/">Million Song Dataset</a>.<br></li>
+<li>Create a demo recommender application using <a href="http://shiny.rstudio.com/">R and Shiny</a></li>
+<li>Recommend songs by <a href="https://en.wikipedia.org/wiki/Prince_(musician">US recording artist &#39;Prince&#39;</a> )</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Getting and Cleaning the Data</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>The entire dataset is 280GB and Stored in Amazon S3 in <a href="https://www.hdfgroup.org/HDF5/">HDF5</a> format.</li>
+<li>We ran a data extraction script on EC2 to a serialized R file containing the features.</li>
+</ul>
+
+<pre><code class="r">df &lt;- readRDS(&quot;data/songs.rds&quot;)
+names(df)
+</code></pre>
+
+<pre><code>##  [1] &quot;artist_name&quot;               &quot;title&quot;                    
+##  [3] &quot;release&quot;                   &quot;song_hotttnesss&quot;          
+##  [5] &quot;tempo&quot;                     &quot;loudness&quot;                 
+##  [7] &quot;energy&quot;                    &quot;danceability&quot;             
+##  [9] &quot;duration&quot;                  &quot;artist_familiarity&quot;       
+## [11] &quot;artist_hotttnesss&quot;         &quot;artist_latitude&quot;          
+## [13] &quot;artist_location&quot;           &quot;artist_longitude&quot;         
+## [15] &quot;end_of_fade_in&quot;            &quot;key&quot;                      
+## [17] &quot;key_confidence&quot;            &quot;song_id&quot;                  
+## [19] &quot;start_of_fade_out&quot;         &quot;time_signature&quot;           
+## [21] &quot;time_signature_confidence&quot; &quot;track_id&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Feature Selection</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Song Hotttnesss : Measures the popularity of the song.</p>
+
+<p><img src="assets/fig/unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Goals'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Getting and Cleaning the Data'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Feature Selection'>
+         3
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
