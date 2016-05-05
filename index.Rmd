@@ -2,7 +2,7 @@
 title       : Prince Song Recommender
 subtitle    : Building a song recommender using the Million Song Dataset
 author      : Telvis Calhoun
-job         : Research Engineer
+job         : technicalelvis.com
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      #
@@ -58,7 +58,7 @@ qplot(loudness, data=df, main="Loudness Distribution for 1M songs:\nMeasures the
 
 - We use the `song_hotttnesss` and `loudness` as numeric features to model songs in a 2-dimensional space.
 - A user can query the recommender by selecting values for `song_hotttnesss` and `loudness`
-- The recommender calculates the 5 closest songs in the 2D space using a euclidean distance metric. 
+- The recommender calculates the `5 nearest songs` in the 2D space using a euclidean distance metric. 
 
 *** =right
 ```{r echo=FALSE, cache=TRUE, message=FALSE, warning=FALSE}
@@ -69,6 +69,6 @@ qplot(song_hotttnesss, loudness, data=df, main="Hotttnesss vs Loudness for 1M so
 
 ##  Prince Song Recommender
 
-- We build a prototype that uses 25 of the 1 million songs.
+- We built a prototype that uses 25 of the 1 million songs.
 - The 25 songs are recorded by [US recording artist 'Prince'](https://en.wikipedia.org/wiki/Prince_(musician\))
 - [We built a Shiny App that demonstrates the recommender - Click here to try it!](https://technicalelvis.shinyapps.io/prince_song_recommender/)

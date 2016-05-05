@@ -2,7 +2,7 @@
 title       : Prince Song Recommender
 subtitle    : Building a song recommender using the Million Song Dataset
 author      : Telvis Calhoun
-job         : Research Engineer
+job         : technicalelvis.com
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      #
@@ -75,6 +75,6 @@ names(df)
 
 ##  Prince Song Recommender
 
-- We build a prototype that uses 25 of the 1 million songs.
+- We built a prototype that uses 25 of the 1 million songs.
 - The 25 songs are recorded by [US recording artist 'Prince'](https://en.wikipedia.org/wiki/Prince_(musician\))
 - [We built a Shiny App that demonstrates the recommender - Click here to try it!](https://technicalelvis.shinyapps.io/prince_song_recommender/)
